@@ -1,9 +1,11 @@
-import './App.css'
+import Home from './Component/Home/Home.jsx'
 
 function App() {
 
   return (
-   <h1 className='text-yellow-800 text-6xl font-bold'>Working</h1>
+   <div className='h-full'>
+    <Home />
+   </div>
   )
 }
 
