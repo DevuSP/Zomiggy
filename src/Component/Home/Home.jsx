@@ -1,36 +1,68 @@
-
+import Card from "./Card/Card";
 
 function Home() {
     return (
-        <div
-            className="w-100% h-full bg-cover bg-no-repeat flex flex-col pb-20"
-            style={{ backgroundImage: `url('images/dishes.png')` }}>
-            {/* navbar */}
+        <>
             <div
-                className="flex justify-center text-white p-4">
+                className="w-100% h-full bg-cover bg-no-repeat flex flex-col pb-20"
+                style={{ backgroundImage: `url('images/dishes.png')` }}>
+
+                {/* navbar */}
                 <div
-                    className="w-2/3">
+                    className="flex justify-center text-white p-4">
                     <div
-                        className="flex flex-row justify-end flex-nowrap space-x-12 text-xl">
-                        <a href=""><p>Cart</p></a>
-                        <a href=""><p>Add Restaurant</p></a>
-                        <a href=""><p>Login</p></a>
-                        <a href=""><p>Signin</p></a>
+                        className="w-2/3">
+                        <div
+                            className="flex flex-row justify-end flex-nowrap space-x-12 text-xl">
+                            <a href=""><p>Cart</p></a>
+                            <a href=""><p>Add Restaurant</p></a>
+                            <a href=""><p>Login</p></a>
+                            <a href=""><p>Signin</p></a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Zomiggy */}
+                <div
+                    className="border-4 border-black py-40 h-5/6 flex flex-col items-center">
+                    <p className="text-5xl text-white">Zomiggy</p>
+                    <p className="text-2xl text-white my-5">Find the best restaurants and cafes.</p>
+                    <div className="bg-white p-2 rounded-lg">
+                        <label>&#x1F50E;
+                            <input
+                                className="border-black border-r-2 ml-1 focus:outline-none"
+                                type="text"
+                                placeholder="City"
+                                spellCheck="false"
+                            />
+                        </label>
+                        <input
+                            className="ml-1 focus:outline-none"
+                            type="text"
+                            placeholder="Restaurant or dish"
+                            spellCheck="false"
+                        />
                     </div>
                 </div>
             </div>
 
-            {/* Zomiggy */}
-            <div
-                className="border-4 border-black py-40 h-5/6 flex flex-col items-center">
-                <p className="text-5xl text-white">Zomiggy</p>
-                <p className="text-2xl text-white my-5">Find the best restaurants and cafes.</p>
-                <div>
-                    <input className="border-r-2 " type="text" />
-                    <input className="" type="text" />
-                </div>
+            {/* Order online || dining in */}
+            <div 
+            className="mt-9 flex flex-row justify-center border-2 h-68 w-full">
+                    {/* order online */}
+                    <Card 
+                    head="Order Online" 
+                    lineUnderHead="Stay home and order to your doorstep" 
+                    route="" 
+                    imgSource="images/Delivery.jpg" />
+                    {/* dining in */}
+                    <Card 
+                    head="Dining" 
+                    lineUnderHead="View the cities finest dining venues" 
+                    route="" 
+                    imgSource="images/Dining.avif" />
             </div>
-        </div>
+        </>
     )
 }
 
