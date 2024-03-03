@@ -52,13 +52,13 @@ function Home() {
                     {/* order online */}
                     <Card 
                     head="Order Online" 
-                    lineUnderHead="Stay home and order to your doorstep" 
+                    lineUnderHead="Order to your doorstep" 
                     route="" 
                     imgSource="images/Delivery.jpg" />
                     {/* dining in */}
                     <Card 
                     head="Dining" 
-                    lineUnderHead="View the cities finest dining venues" 
+                    lineUnderHead="Dine in finest dining venues" 
                     route="" 
                     imgSource="images/Dining.avif" />
             </div>

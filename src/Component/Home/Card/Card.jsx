@@ -4,7 +4,7 @@ function Card({ head, lineUnderHead, route, imgSource }) {
     }
     return (
         <>
-            <div className="border-2 border-black-300 w-1/3 rounded-xl m-3"
+            <div className="border-2 border-black-300 w-1/4 rounded-xl m-3"
                  onClick={handleClick}
             >
                 <img 
