@@ -7,58 +7,57 @@ function Footer() {
                 className="flex justify-between w-1/2 border-4 border-red-300">
                 <div>
                     <h1 className="mb-2">ABOUT ZOMIGGY</h1>
-                    <a href="">
+                    <Link href="">
                         <p>Who We Are</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p>Blog</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p> Work With Us</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p> Investor Relations </p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p>Report Fraud </p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p>Press Kit</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p> Contact Us </p>
-                    </a>
+                    </Link>
                 </div>
 
                 <div>
                     <h1 className="mb-2">LEARN MORE</h1>
-                    <a href="">
+                    <Link href="">
                         <p>Privacy</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p> Security </p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p>Terms </p>
-                    </a>
+                    </Link>
                 </div>
 
                 <div>
                     <h1 className="mb-2">FOR RESTAURANTS</h1>
-                    <a href="">
+                    <Link href="">
                         <p>Partner With Us</p>
-                    </a>
-                    <a href="">
+                    </Link>
+                    <Link href="">
                         <p>Apps For You</p>
-                    </a>
+                    </Link>
                 </div>
 
                 <div>
                     <h1  className="mb-2">SOCIAL LINKS</h1>
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                    <Link><img src="images/facebook.png" alt="facebook link" />Facebook</Link>
+                    <Link><img src="images/instagram.png" alt="instagram link" />Instagram</Link>
+                    <Link><img src="images/x.png" alt="x link" />X(Twitter)</Link>
                 </div>
 
             </div>
