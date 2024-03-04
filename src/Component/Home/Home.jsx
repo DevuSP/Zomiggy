@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import Card from "./Card/Card";
+
 
 function Home() {
     return (
@@ -14,10 +16,10 @@ function Home() {
                         className="w-2/3">
                         <div
                             className="flex flex-row justify-end flex-nowrap space-x-12 text-xl">
-                            <a href=""><p>Cart</p></a>
-                            <a href=""><p>Add Restaurant</p></a>
-                            <a href=""><p>Login</p></a>
-                            <a href=""><p>Signin</p></a>
+                            <Link to=""><p>Cart</p></Link>
+                            <Link to=""><p>Add Restaurant</p></Link>
+                            <Link to=""><p>Login</p></Link>
+                            <Link to=""><p>Signin</p></Link>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom'
+
+
 function Card({ head, lineUnderHead, route, imgSource }) {
     const handleClick = () =>{
-       return <Link route={route}></Link>
+       return <Link to={route}></Link>
     }
     return (
         <>
