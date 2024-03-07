@@ -9,20 +9,7 @@ function Home() {
                 className="w-100% h-full bg-cover bg-no-repeat flex flex-col pb-20"
                 style={{ backgroundImage: `url('images/dishes.png')` }}>
 
-                {/* navbar */}
-                <div
-                    className="flex justify-center text-white p-4">
-                    <div
-                        className="w-2/3">
-                        <div
-                            className="flex flex-row justify-end flex-nowrap space-x-12 text-xl">
-                            <Link to=""><p>Cart</p></Link>
-                            <Link to=""><p>Add Restaurant</p></Link>
-                            <Link to=""><p>Login</p></Link>
-                            <Link to=""><p>Signin</p></Link>
-                        </div>
-                    </div>
-                </div>
+                
 
                 {/* Zomiggy */}
                 <div

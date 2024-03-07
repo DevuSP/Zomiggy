@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
-import {Footer} from './index'
+import {Footer, Header} from './index.jsx'
 
 function Layout () {
     return (
         <>
+            <Header />
             <Outlet />
             <Footer />
         </>
