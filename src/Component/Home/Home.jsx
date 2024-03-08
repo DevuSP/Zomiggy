@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Card from "./Card/Card";
 
 
@@ -6,16 +5,13 @@ function Home() {
     return (
         <>
             <div
-                className="w-100% h-full bg-cover bg-no-repeat flex flex-col pb-20"
+                className="bg-cover bg-no-repeat flex flex-col rounded-b-xl"
                 style={{ backgroundImage: `url('images/dishes.png')` }}>
-
-                
-
                 {/* Zomiggy */}
                 <div
-                    className="border-4 border-black py-40 h-5/6 flex flex-col items-center">
-                    <p className="text-5xl text-white">Zomiggy</p>
-                    <p className="text-2xl text-white my-5">Find the best restaurants and cafes.</p>
+                    className="py-40 h-5/6 flex flex-col items-center">
+                    <p className="text-5xl text-slate-200">Zomiggy</p>
+                    <p className="text-2xl text-slate-200 my-5">Find the best restaurants and cafes.</p>
                     <div className="bg-white p-2 rounded-lg">
                         <label>&#x1F50E;
                             <input
@@ -37,7 +33,7 @@ function Home() {
 
             {/* Order online || dining in */}
             <div 
-            className="mt-9 flex flex-row justify-center border-2 h-68 w-full">
+            className="mt-9 flex flex-row justify-center w-full">
                     {/* order online */}
                     <Card 
                     head="Order Online" 

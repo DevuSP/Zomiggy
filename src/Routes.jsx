@@ -1,16 +1,16 @@
-import ReactDOM from 'react-dom/client'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import { Home } from './index.jsx'
 
 
-const Router = () => {
-    return (
-        <Routes path='/' element={<Layout />}>
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path='/' element={<Layout />}>
             <Route path='' element={<Home />} />
 
-        </Routes>
+        </Route>
     )
-}
+)
 
-export default Router;
+
+export default router;
