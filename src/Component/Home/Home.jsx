@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import Card from "./Card/Card";
-
+import SearchBar from "./SearchBar/SearchBar";
 
 function Home() {
     return (
@@ -12,39 +13,26 @@ function Home() {
                     className="py-40 h-5/6 flex flex-col items-center">
                     <p className="text-5xl text-slate-200">Zomiggy</p>
                     <p className="text-2xl text-slate-200 my-5">Find the best restaurants and cafes.</p>
-                    <div className="bg-white p-2 rounded-lg">
-                        <label>&#x1F50E;
-                            <input
-                                className="border-black border-r-2 ml-1 focus:outline-none"
-                                type="text"
-                                placeholder="City"
-                                spellCheck="false"
-                            />
-                        </label>
-                        <input
-                            className="ml-1 focus:outline-none"
-                            type="text"
-                            placeholder="Restaurant or dish"
-                            spellCheck="false"
-                        />
-                    </div>
+                    <SearchBar />
                 </div>
             </div>
 
             {/* Order online || dining in */}
-            <div 
-            className="mt-9 flex flex-row justify-center w-full">
-                    {/* order online */}
-                    <Card 
-                    head="Order Online" 
-                    lineUnderHead="Order to your doorstep" 
-                    route="" 
+            <div
+                className="mt-9 flex flex-row justify-center w-full">
+
+                {/* order online */}
+                <Card
+                    head="Order Online"
+                    lineUnderHead="Order to your doorstep"
+                    route="/order"
                     imgSource="images/Delivery.jpg" />
-                    {/* dining in */}
-                    <Card 
-                    head="Dining" 
-                    lineUnderHead="Dine in finest dining venues" 
-                    route="" 
+
+                {/* dining in */}
+                <Card
+                    head="Dining"
+                    lineUnderHead="Dine in finest dining venues"
+                    route="/diningin"
                     imgSource="images/Dining.avif" />
             </div>
         </>

@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
-import {Header, Footer} from "./index"
-function Layout () {
+import { Header, Footer } from "./index"
+function Layout() {
     return (
-        <>
-            <Header className="flex flex-col min-h-screen" />
-            <Outlet className="flex-1"/>
+        <div className="flex flex-col min-h-screen">
+            <Header />
+            {/* provide all outlet with {'className="flex-1"'} */}
+            <Outlet />
             <Footer />
-        </>
+        </div>
     )
 }
 
