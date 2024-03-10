@@ -11,7 +11,7 @@ function Home() {
                 {/* Zomiggy */}
                 <div
                     className="py-40 h-5/6 flex flex-col items-center">
-                    <p className="text-5xl text-slate-200">Zomiggy</p>
+                    <p className="text-5xl text-slate-200">zomiggy</p>
                     <p className="text-2xl text-slate-200 my-5">Find the best restaurants and cafes.</p>
                     <SearchBar />
                 </div>
