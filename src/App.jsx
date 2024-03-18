@@ -1,14 +1,20 @@
-import Home from './Component/Home/Home.jsx'
-import Footer from './Component/Footer/Footer.jsx'
+import router from "./Routes";
+import { RouterProvider } from 'react-router-dom'
+import { OrdOrDelProvider } from './Context/OrdOrDelContext.jsx'
+import { useState } from "react";
+import { useOrdOrDel } from "./Context/OrdOrDelContext.jsx";
 
 function App() {
-
-  return (
-   <div className='h-full'>
-    <Home />
-    <Footer />
-   </div>
-  )
+    const changeValue = (element) => {
+        const {ordOrDel} = useOrdOrDel()
+        // const [ordOrDel, setOrdOrDel] = useState("/order");
+        // setOrdOrDel(element);
+        console.log(ordOrDel);
+    }
+    return (
+        <OrdOrDelProvider value={{ changeValue }}>
+            <RouterProvider router={router} />
+        </OrdOrDelProvider>
+    )
 }
-
-export default App
+export default App;

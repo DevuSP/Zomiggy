@@ -1,7 +1,9 @@
 import SearchBar from "../Home/SearchBar/SearchBar";
 import { Link } from "react-router-dom";
+import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
-function OrderOnline() {
+function OrderOrDelivery() {
+    const { ordOrDel } = useOrdOrDel();
     return (
         <>
             <div className="flex-1">
@@ -33,7 +35,7 @@ function OrderOnline() {
                     <div className="w-[50rem]">
                         <p className="text-2xl">Delivery Restuarants Near you</p>
                         <div className="grid">
-
+                            <p className="text-2xl">flsdfkj   {ordOrDel}</p>
                         </div>
                     </div>
                 </div>
@@ -42,4 +44,4 @@ function OrderOnline() {
     )
 }
 
-export default OrderOnline;
+export default OrderOrDelivery; 

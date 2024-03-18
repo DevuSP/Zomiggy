@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import Card from "./Card/Card";
 import SearchBar from "./SearchBar/SearchBar";
+import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
 function Home() {
+    const { ordOrDel } = useOrdOrDel();
     return (
         <>
             <div
@@ -32,8 +34,10 @@ function Home() {
                 <Card
                     head="Dining"
                     lineUnderHead="Dine in finest dining venues"
-                    route="/diningin"
-                    imgSource="images/Dining.avif" />
+                    route="/dining"
+                    imgSource="images/Dining.jpg" />
+
+                <p>fdsf {ordOrDel }</p>
             </div>
         </>
     )
