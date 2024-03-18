@@ -5,10 +5,7 @@ function Card({ head, lineUnderHead, route, imgSource }) {
     const { changeValue } = useOrdOrDel();  //context
 
     const handleClick = () => {
-        changeValue((prev)=>{
-            return route;
-        });
-        console.log(`route ${route}`);
+        changeValue(route)
     }
     return (
         <>

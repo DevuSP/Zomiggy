@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
 function OrderOrDelivery() {
-    const { ordOrDel } = useOrdOrDel();
+    const { ordOrDel, changeValue } = useOrdOrDel();
+    const handleClickDining = (e) => {
+        changeValue("/dining");
+    }
+    const handleClickOrder = ()=>{
+        changeValue("/order")
+    }
     return (
         <>
             <div className="flex-1">
@@ -17,12 +23,16 @@ function OrderOrDelivery() {
                 {/* Delivery or Dine In */}
                 <div className="flex justify-center mt-10">
                     <div className="w-[50rem] flex">
-                        <Link className="mr-6 text-xl flex items-center w-40" to="/dining">
+                        <Link className="mr-6 text-xl flex items-center w-40"
+                            to="/dining"
+                            onClick={handleClickDining}>
                             <img className="w-10 rounded-full mr-2"
                                 src="images/delivery.png" alt="logo" />
                             Dining In
                         </Link>
-                        <Link className="text-xl flex items-center w-40" to="/order">
+                        <Link className="text-xl flex items-center w-40"
+                            to="/order"
+                            onClick={handleClickOrder}>
                             <img className="rounded-full w-[3.3rem] mr-2"
                                 src="images/dinein.png" alt="logo" />
                             Delivery

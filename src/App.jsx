@@ -2,17 +2,14 @@ import router from "./Routes";
 import { RouterProvider } from 'react-router-dom'
 import { OrdOrDelProvider } from './Context/OrdOrDelContext.jsx'
 import { useState } from "react";
-import { useOrdOrDel } from "./Context/OrdOrDelContext.jsx";
 
 function App() {
+    const [ordOrDel, setOrdOrDel] = useState("/order");
     const changeValue = (element) => {
-        const {ordOrDel} = useOrdOrDel()
-        // const [ordOrDel, setOrdOrDel] = useState("/order");
-        // setOrdOrDel(element);
-        console.log(ordOrDel);
+        setOrdOrDel(element);
     }
     return (
-        <OrdOrDelProvider value={{ changeValue }}>
+        <OrdOrDelProvider value={{ ordOrDel, changeValue }}>
             <RouterProvider router={router} />
         </OrdOrDelProvider>
     )
