@@ -1,6 +1,7 @@
 import SearchBar from "../Home/SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import { useOrdOrDel } from "../../Context/OrdOrDelContext";
+import { data } from "autoprefixer";
 
 function OrderOrDelivery() {
     const { ordOrDel, changeValue } = useOrdOrDel();
@@ -10,6 +11,19 @@ function OrderOrDelivery() {
     const handleClickOrder = ()=>{
         changeValue("/order")
     }
+
+    const fetchingData = async () => {
+        let data;
+        if(ordOrDel === "/order"){
+          let response = await fetch("/JSON/Food.jsx")
+          data = await response.json();
+        } else if(ordOrDel === "/dining"){
+            let response = await fetch("/JSON/Food.jsx")
+            data = await response.json();
+        }
+        console.log("public" + data);
+    } 
+    fetchingData();
     return (
         <>
             <div className="flex-1">
@@ -44,7 +58,7 @@ function OrderOrDelivery() {
                 <div className="flex justify-center mt-5">
                     <div className="w-[50rem]">
                         <p className="text-2xl">Delivery Restuarants Near you</p>
-                        <div className="grid">
+                        <div className="grid mt-10">
                             <p className="text-2xl">flsdfkj   {ordOrDel}</p>
                         </div>
                     </div>
