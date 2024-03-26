@@ -8,21 +8,21 @@ function OrderOrDelivery() {
     const handleClickDining = (e) => {
         changeValue("/dining");
     }
-    const handleClickOrder = ()=>{
+    const handleClickOrder = () => {
         changeValue("/order")
     }
 
     const fetchingData = async () => {
-        let data;
-        if(ordOrDel === "/order"){
-          let response = await fetch("/JSON/Food.jsx")
-          data = await response.json();
-        } else if(ordOrDel === "/dining"){
-            let response = await fetch("/JSON/Food.jsx")
-            data = await response.json();
+        let url;
+        if (ordOrDel === "/order") {
+            url = "/JSON/Delivery.js";
+        } else {
+            url = "/JSON/Restuarants.js";
         }
-        console.log("public" + data);
-    } 
+        let response = await fetch(url);
+        let data = await response.json();
+        console.log(data);
+    }
     fetchingData();
     return (
         <>
@@ -59,7 +59,7 @@ function OrderOrDelivery() {
                     <div className="w-[50rem]">
                         <p className="text-2xl">Delivery Restuarants Near you</p>
                         <div className="grid mt-10">
-                            <p className="text-2xl">flsdfkj   {ordOrDel}</p>
+                            <p className="text-2xl">User is asking for {ordOrDel === "/dining" ? "Dining." : "Delivery."}</p>
                         </div>
                     </div>
                 </div>
