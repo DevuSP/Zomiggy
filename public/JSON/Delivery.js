@@ -1,44 +1,44 @@
 [
     {
-        "Dish": "Chole Bhature",
-        "Delivery Time": "44 min",
-        "Rating": "4.2",
-        "Price": "150",
-        "Image": "public/images/delivery/bhature.avif"
+        "dish": "Chole Bhature",
+        "deliveryTime": "44 min",
+        "rating": "4.2",
+        "price": "150",
+        "image": "/images/delivery/bhature.avif"
     },
     {
-        "Dish": "Chicken Tikka Masala",
-        "Delivery Time": "40 min",
-        "Rating": "4.7",
-        "Price": "130",
-        "Image": "public/images/delivery/chickentikka.avif"
+        "dish": "Chicken Tikka Masala",
+        "deliveryTime": "40 min",
+        "rating": "4.7",
+        "price": "130",
+        "image": "/images/delivery/chickentikka.avif"
     },
     {
-        "Dish": "Lemon Chicken",
-        "Delivery Time": "42 min",
-        "Rating": "4.8",
-        "Price": "130",
-        "Image": "public/images/delivery/lemonchicken.avif"
+        "dish": "Lemon Chicken",
+        "deliveryTime": "42 min",
+        "rating": "4.8",
+        "price": "130",
+        "image": "/images/delivery/lemonchicken.png"
     },
     {
-        "Dish": "Momos",
-        "Delivery Time": "23 min",
-        "Rating": "4.3",
-        "Price": "80",
-        "Image": "public/images/delivery/momos.avif"
+        "dish": "Momos",
+        "deliveryTime": "23 min",
+        "rating": "4.3",
+        "price": "80",
+        "image": "/images/delivery/momos.avif"
     },
     {
-        "Dish": "Chowmin",
-        "Delivery Time": "27 min",
-        "Rating": "4.8",
-        "Price": "80",
-        "Image": "public/images/delivery/chowmin.png"
+        "dish": "Chowmin",
+        "deliveryTime": "27 min",
+        "rating": "4.8",
+        "price": "80",
+        "image": "/images/delivery/chowmin.png"
     },
     {
-        "Dish": "Dosa",
-        "Delivery Time": "32 min",
-        "Rating": "4.8",
-        "Price": "120",
-        "Image": "public/images/delivery/dosa.jpg"
+        "dish": "Dosa",
+        "deliveryTime": "32 min",
+        "rating": "4.8",
+        "price": "120",
+        "image": "/images/delivery/dosa.jpg"
     }
 ]

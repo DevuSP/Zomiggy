@@ -1,29 +1,40 @@
 import SearchBar from "../Home/SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import { useOrdOrDel } from "../../Context/OrdOrDelContext";
-import { data } from "autoprefixer";
+import DeliveryCard from "./FoodCard/DeliveryCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function OrderOrDelivery() {
     const { ordOrDel, changeValue } = useOrdOrDel();
-    const handleClickDining = (e) => {
+    const handleClickDining = () => {
         changeValue("/dining");
     }
     const handleClickOrder = () => {
-        changeValue("/order")
+        changeValue("/order");
     }
 
-    const fetchingData = async () => {
-        let url;
-        if (ordOrDel === "/order") {
-            url = "/JSON/Delivery.js";
-        } else {
-            url = "/JSON/Restuarants.js";
-        }
-        let response = await fetch(url);
-        let data = await response.json();
-        console.log(data);
+    let url;
+    if (ordOrDel === "/order") {
+        url = "/JSON/Delivery.js";
+    } else {
+        url = "/JSON/Restuarants.js";
     }
-    fetchingData();
+
+    let [data, setData] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let res = await axios.get(url);
+                setData(res.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <>
             <div className="flex-1">
@@ -55,11 +66,17 @@ function OrderOrDelivery() {
                 </div>
 
                 {/* Options for menu */}
-                <div className="flex justify-center mt-5">
+                <div className="flex justify-center my-8">
                     <div className="w-[50rem]">
                         <p className="text-2xl">Delivery Restuarants Near you</p>
-                        <div className="grid mt-10">
-                            <p className="text-2xl">User is asking for {ordOrDel === "/dining" ? "Dining." : "Delivery."}</p>
+                        <div className="flex flex-wrap mt-10">
+                            {
+                                data.map((element, index)=>{
+                                    return(
+                                        <DeliveryCard id={index} prop={element} />
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>
