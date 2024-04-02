@@ -1,39 +1,39 @@
 
 [
     {
-        "Name": "Centrum",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.9",
-        "Image": "images/restuarants/centrumhotel.avif"
+        "name": "Centrum",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.9",
+        "image": "images/restuarants/centrumhotel.avif"
     },
     {
-        "Name": "Bawarchi",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.5",
-        "Image": "images/restuarants/bawarchi.jpg"
+        "name": "Bawarchi",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.5",
+        "image": "images/restuarants/bawarchi.jpg"
     },
     {
-        "Name": "Chillis",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.7",
-        "Image": "images/restuarants/chillishotel.jpg"
+        "name": "Chillis",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.7",
+        "image": "images/restuarants/chillishotel.jpg"
     },
     {
-        "Name": "Kalsang",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.7",
-        "Image": "images/restuarants/kalsang.jpg"
+        "name": "Kalsang",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.7",
+        "image": "images/restuarants/kalsang.jpg"
     },
     {
-        "Name": "Raasta",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.9",
-        "Image": "images/restuarants/Raasta.jpg"
+        "name": "Raasta",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.9",
+        "image": "images/restuarants/Raasta.jpg"
     },
     {
-        "Name": "Sayaji",
-        "Location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
-        "Rating": "4.1",
-        "Image": "images/restuarants/sayaji.jpg"
+        "name": "Sayaji",
+        "location": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi qui esse, modi sit necessitatibus eum.",
+        "rating": "4.1",
+        "image": "images/restuarants/sayaji.jpg"
     }
 ]

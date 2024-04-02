@@ -1,6 +1,5 @@
 
 function DeliveryCard({prop}) {
-    console.log(prop);
     return ( 
         <div className="w-[15rem] m-3 rounded-lg border-2 border-black">
             <div className="h-[11rem]">
