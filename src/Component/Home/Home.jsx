@@ -7,7 +7,7 @@ function Home() {
         <>
             <div
                 className="bg-cover bg-no-repeat flex flex-col rounded-b-xl"
-                style={{ backgroundImage: `url('images/dishes.png')` }}>
+                style={{ backgroundImage: `url('./Zomiggy/images/dishes.png')` }}>
                 {/* Zomiggy */}
                 <div
                     className="py-40 h-5/6 flex flex-col items-center">
@@ -25,15 +25,15 @@ function Home() {
                 <Card
                     head="Order Online"
                     lineUnderHead="Order to your doorstep"
-                    route="/order"
-                    imgSource="images/Delivery.jpg" />
+                    route="/Zomiggy/order"
+                    imgSource="./Zomiggy/images/Delivery.jpg" />
 
                 {/* dining in */}
                 <Card
                     head="Dining"
                     lineUnderHead="Dine in finest dining venues"
-                    route="/dining"
-                    imgSource="images/Dining.jpg" />
+                    route="/Zomiggy/dining"
+                    imgSource="./Zomiggy/images/Dining.jpg" />
 
             </div>
         </>

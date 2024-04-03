@@ -10,16 +10,16 @@ function OrderOrDelivery() {
     const { ordOrDel, changeValue } = useOrdOrDel();
     let url;
     const handleClickDining = () => {
-        changeValue("/dining");
+        changeValue("/Zomiggy/dining");
     }
     const handleClickOrder = () => {
-        changeValue("/order");
+        changeValue("/Zomiggy/order");
     }
 
-    if (ordOrDel === "/order") {
-        url = "/JSON/Delivery.js";
+    if (ordOrDel === "/Zomiggy/order") {
+        url = "/Zomiggy/JSON/Delivery.js";
     } else {
-        url = "/JSON/Restuarants.js";
+        url = "/Zomiggy/JSON/Restuarants.js";
     }
 
     let [data, setData] = useState([]);
@@ -44,7 +44,7 @@ function OrderOrDelivery() {
 
                 {/* Search bar */}
                 <div className="flex justify-center mt-4">
-                    <p className="text-3xl text-black font-semibold mr-5"><Link to={"/"}>Zomiggy</Link></p>
+                    <p className="text-3xl text-black font-semibold mr-5"><Link to={"/Zomiggy"}>Zomiggy</Link></p>
                     <SearchBar />
                 </div>
 
@@ -52,14 +52,14 @@ function OrderOrDelivery() {
                 <div className="flex justify-center mt-10">
                     <div className="w-[50rem] flex">
                         <Link className="mr-6 text-xl flex items-center w-40"
-                            to="/dining"
+                            to="/Zomiggy/dining"
                             onClick={handleClickDining}>
                             <img className="w-10 rounded-full mr-2"
                                 src="images/delivery.png" alt="logo" />
                             Dining In
                         </Link>
                         <Link className="text-xl flex items-center w-40"
-                            to="/order"
+                            to="/Zomiggy/order"
                             onClick={handleClickOrder}>
                             <img className="rounded-full w-[3.3rem] mr-2"
                                 src="images/dinein.png" alt="logo" />
@@ -75,7 +75,7 @@ function OrderOrDelivery() {
                         <div className="flex flex-wrap mt-10">
                             {
                                 data.map((element, index) => {
-                                    if (ordOrDel === "/order") {
+                                    if (ordOrDel === "/Zomiggy/order") {
                                         return (
                                             <DeliveryCard key={index} prop={element} />
                                         )

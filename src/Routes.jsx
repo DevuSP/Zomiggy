@@ -5,10 +5,10 @@ import { Home, OrderOrDelivery } from './index.jsx'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path='/' element={<Layout />}>
+        <Route path='/Zomiggy' element={<Layout />}>
             <Route path='' element={<Home />} />
-            <Route path='order' element={<OrderOrDelivery />} />
-            <Route path='dining' element={<OrderOrDelivery />} />
+            <Route path='/Zomiggy/order' element={<OrderOrDelivery />} />
+            <Route path='/Zomiggy/dining' element={<OrderOrDelivery />} />
         </Route>
     )
 )

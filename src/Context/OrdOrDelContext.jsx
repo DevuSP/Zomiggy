@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export const OrdOrDelContext = createContext({
-    ordOrDel: "/order",  // it is taking route prop from home. "/order" or not.
+    ordOrDel: "/Zomiggy/order",  // it is taking route prop from home. "/order" or not.
     changeValue: () => { }
 });
 

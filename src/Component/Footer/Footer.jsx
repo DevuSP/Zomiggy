@@ -59,13 +59,13 @@ function Footer() {
                     <div
                         className='flex flex-wrap w-32'>
                         <Link to="/social/facebook">
-                            <img src="images/facebook.png" alt="facebook link" className='h-8 mr-2' />
+                            <img src="./Zomiggy/images/facebook.png" alt="facebook link" className='h-8 mr-2' />
                         </Link>
                         <Link to="/instagram">
-                            <img src="images/instagram.png" alt="instagram link" className='h-8 mx-2' />
+                            <img src="./Zomiggy/images/instagram.png" alt="instagram link" className='h-8 mx-2' />
                         </Link>
                         <Link to="/x"> 
-                            <img src="images/x.png" alt="x link" className='h-8 ml-2' />
+                            <img src="./Zomiggy/images/x.png" alt="x link" className='h-8 ml-2' />
                         </Link>
                     </div>
                 </div>
