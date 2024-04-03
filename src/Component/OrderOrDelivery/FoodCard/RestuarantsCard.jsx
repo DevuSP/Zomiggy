@@ -1,9 +1,9 @@
 
-function RestuarantsCard() {
+function RestuarantsCard({prop}) {
     return (
         <div className="w-[15rem] m-3 rounded-lg border-2 border-black">
             <div className="h-[11rem]">
-                <img className="h-[11rem]" src={prop.image} alt="Restuarant Image" />
+                <img className="h-[11rem]" src={prop.image} alt={prop.name} />
             </div>
             <div className="mt-5">
                 <p>

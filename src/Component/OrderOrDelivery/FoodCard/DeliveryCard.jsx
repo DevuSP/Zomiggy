@@ -3,7 +3,7 @@ function DeliveryCard({prop}) {
     return ( 
         <div className="w-[15rem] m-3 rounded-lg border-2 border-black">
             <div className="h-[11rem]">
-                <img className="h-[11rem]" src={prop.image} alt={prop.dish} />
+                <img className="h-[11rem] min-w-full max-w-full" src={prop.image} alt={prop.dish} />
             </div>
             <div className="mt-5">
                 <p>

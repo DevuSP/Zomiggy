@@ -5,7 +5,7 @@ function Header() {
         <>      
             {/* navbar */}
             <div
-                className="flex justify-end bg-slate-800 text-slate-300 px-4 py-1">
+                className="flex justify-end bg-slate-800 text-slate-300 px-4 py-2">
                 <div
                     className="w-2/3">
                     <div

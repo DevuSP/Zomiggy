@@ -4,9 +4,11 @@ import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 import DeliveryCard from "./FoodCard/DeliveryCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import RestuarantsCard from "./FoodCard/RestuarantsCard";
 
 function OrderOrDelivery() {
     const { ordOrDel, changeValue } = useOrdOrDel();
+    let url;
     const handleClickDining = () => {
         changeValue("/dining");
     }
@@ -14,7 +16,6 @@ function OrderOrDelivery() {
         changeValue("/order");
     }
 
-    let url;
     if (ordOrDel === "/order") {
         url = "/JSON/Delivery.js";
     } else {
@@ -27,13 +28,15 @@ function OrderOrDelivery() {
             try {
                 let res = await axios.get(url);
                 setData(res.data);
+                console.log(data);
             } catch (error) {
                 console.log(error);
             }
         }
 
         fetchData();
-    }, []);
+    }, [url]);
+
 
     return (
         <>
@@ -41,7 +44,7 @@ function OrderOrDelivery() {
 
                 {/* Search bar */}
                 <div className="flex justify-center mt-4">
-                    <p className="text-3xl text-black font-semibold mr-5">Zomiggy</p>
+                    <p className="text-3xl text-black font-semibold mr-5"><Link to={"/"}>Zomiggy</Link></p>
                     <SearchBar />
                 </div>
 
@@ -71,10 +74,16 @@ function OrderOrDelivery() {
                         <p className="text-2xl">Delivery Restuarants Near you</p>
                         <div className="flex flex-wrap mt-10">
                             {
-                                data.map((element, index)=>{
-                                    return(
-                                        <DeliveryCard id={index} prop={element} />
-                                    )
+                                data.map((element, index) => {
+                                    if (ordOrDel === "/order") {
+                                        return (
+                                            <DeliveryCard key={index} prop={element} />
+                                        )
+                                    } else {
+                                        return (
+                                            <RestuarantsCard key={index} prop={element} />
+                                        )
+                                    }
                                 })
                             }
                         </div>
