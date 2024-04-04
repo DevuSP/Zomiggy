@@ -7,7 +7,8 @@ import axios from "axios";
 import RestuarantsCard from "./FoodCard/RestuarantsCard";
 
 function OrderOrDelivery() {
-    const { ordOrDel, changeValue } = useOrdOrDel("/Zomiggy/dining");
+    const { ordOrDel, changeValue } = useOrdOrDel();
+    console.log("ordOrDel " + ordOrDel);
     let url;
     const handleClickDining = () => {
         changeValue("/Zomiggy/dining");
@@ -43,26 +44,26 @@ function OrderOrDelivery() {
             <div className="flex-1">
 
                 {/* Search bar */}
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center mt-4 ml-8">
                     <p className="text-3xl text-black font-semibold mr-5"><Link to={"/Zomiggy"}>Zomiggy</Link></p>
                     <SearchBar />
                 </div>
 
 
                 {/* Options for menu */}
-                <div className="flex justify-center my-8">
+                <div className="flex justify-center my-4">
                     <div className="w-[58rem]">
 
                         {/* Delivery or Dine In */}
-                        <div className="flex my-9 h-10">
-                            <Link className={"mr-6 text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2 " + (ordOrDel === "/Zomiggy/dining" ? "border-b-4 border-black shadow-lg" : "")}
+                        <div className="flex my-5 ml-5 h-10">
+                            <Link className={"mr-6 text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2" + (ordOrDel === "/Zomiggy/dining" ? " border-b-4 border-black shadow-lg" : "")}
                                 to="/Zomiggy/dining"
                                 onClick={handleClickDining}>
                                 <img className="w-10 rounded-full mr-2"
                                     src="images/delivery.png" alt="logo" />
                                 Dining In
                             </Link>
-                            <Link className={"text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2 " + (ordOrDel === "/Zomiggy/order" ? "border-b-4 border-black shadow-lg" : "")}
+                            <Link className={"text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2" + (ordOrDel === "/Zomiggy/order" ? " border-b-4 border-black shadow-lg" : "")}
                                 to="/Zomiggy/order"
                                 onClick={handleClickOrder}>
                                 <img className="rounded-full w-[3.3rem] mr-2"
@@ -71,9 +72,9 @@ function OrderOrDelivery() {
                             </Link>
                         </div>
 
-                            {/* Delivery or resturant card. */}
-                        <p className="text-2xl">Delivery Restuarants Near you</p>
-                        <div className="flex flex-wrap mt-10">
+                        {/* Delivery or resturant card. */}
+                        <p className="text-2xl ml-5 w-max">{ordOrDel === "/Zomiggy/dining" ? "Dine In" : "Delivery"} Restuarants Near you</p>
+                        <div className="flex flex-wrap mt-5">
                             {
                                 data.map((element, index) => {
                                     if (ordOrDel === "/Zomiggy/order") {

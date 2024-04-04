@@ -9,11 +9,12 @@ function Card({ head, lineUnderHead, route, imgSource }) {
     }
     return (
         <>
-            <div className="border-2 border-black-300 w-1/5 rounded-xl m-3"
+            <div className="border-2 border-black-300 w-1/5 rounded-xl m-3 hover:border-slate-700 cursor-pointer"
+
             >
                 <Link to={route} onClick={handleClick}>
                     <img
-                        className="w-full h-2/3 rounded-t-xl"
+                        className="w-full h-2/3 rounded-t-xl p-1"
                         src={imgSource}
                         alt={`Image for ${head}`} />
                     <p
