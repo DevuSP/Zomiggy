@@ -7,7 +7,7 @@ import axios from "axios";
 import RestuarantsCard from "./FoodCard/RestuarantsCard";
 
 function OrderOrDelivery() {
-    const { ordOrDel, changeValue } = useOrdOrDel();
+    const { ordOrDel, changeValue } = useOrdOrDel("/Zomiggy/dining");
     let url;
     const handleClickDining = () => {
         changeValue("/Zomiggy/dining");
@@ -48,29 +48,30 @@ function OrderOrDelivery() {
                     <SearchBar />
                 </div>
 
-                {/* Delivery or Dine In */}
-                <div className="flex justify-center mt-10">
-                    <div className="w-[50rem] flex">
-                        <Link className="mr-6 text-xl flex items-center w-40"
-                            to="/Zomiggy/dining"
-                            onClick={handleClickDining}>
-                            <img className="w-10 rounded-full mr-2"
-                                src="images/delivery.png" alt="logo" />
-                            Dining In
-                        </Link>
-                        <Link className="text-xl flex items-center w-40"
-                            to="/Zomiggy/order"
-                            onClick={handleClickOrder}>
-                            <img className="rounded-full w-[3.3rem] mr-2"
-                                src="images/dinein.png" alt="logo" />
-                            Delivery
-                        </Link>
-                    </div>
-                </div>
 
                 {/* Options for menu */}
                 <div className="flex justify-center my-8">
-                    <div className="w-[50rem]">
+                    <div className="w-[58rem]">
+
+                        {/* Delivery or Dine In */}
+                        <div className="flex my-9 h-10">
+                            <Link className={"mr-6 text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2 " + (ordOrDel === "/Zomiggy/dining" ? "border-b-4 border-black shadow-lg" : "")}
+                                to="/Zomiggy/dining"
+                                onClick={handleClickDining}>
+                                <img className="w-10 rounded-full mr-2"
+                                    src="images/delivery.png" alt="logo" />
+                                Dining In
+                            </Link>
+                            <Link className={"text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2 " + (ordOrDel === "/Zomiggy/order" ? "border-b-4 border-black shadow-lg" : "")}
+                                to="/Zomiggy/order"
+                                onClick={handleClickOrder}>
+                                <img className="rounded-full w-[3.3rem] mr-2"
+                                    src="images/dinein.png" alt="logo" />
+                                Delivery
+                            </Link>
+                        </div>
+
+                            {/* Delivery or resturant card. */}
                         <p className="text-2xl">Delivery Restuarants Near you</p>
                         <div className="flex flex-wrap mt-10">
                             {
