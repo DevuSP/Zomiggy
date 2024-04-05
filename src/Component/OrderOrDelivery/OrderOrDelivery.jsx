@@ -40,12 +40,12 @@ function OrderOrDelivery() {
 
 
     return (
-        <>
+        <div className="bg-violet-50/20">
             <div className="flex-1">
 
                 {/* Search bar */}
                 <div className="flex justify-center mt-4 ml-8">
-                    <p className="text-3xl text-black font-semibold mr-5"><Link to={"/Zomiggy"}>Zomiggy</Link></p>
+                    <p className="text-3xl text-black font-semibold mr-5"><Link to={"/Zomiggy"}> <i>Zomiggy</i></Link></p>
                     <SearchBar />
                 </div>
 
@@ -92,7 +92,7 @@ function OrderOrDelivery() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

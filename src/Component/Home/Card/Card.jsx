@@ -9,22 +9,24 @@ function Card({ head, lineUnderHead, route, imgSource }) {
     }
     return (
         <>
-            <div className="border-2 border-black-300 w-1/5 rounded-xl m-3 hover:border-slate-700 cursor-pointer"
-
+            <div className="border-2 border-black-300 w-1/5 rounded-xl m-3 hover:border-slate-700 cursor-pointer p-1 pb-2" 
+                // increase width below screen 1000 and so on.
             >
                 <Link to={route} onClick={handleClick}>
                     <img
-                        className="w-full h-2/3 rounded-t-xl p-1"
+                        className="w-full h-2/3 rounded-t-xl"
                         src={imgSource}
                         alt={`Image for ${head}`} />
-                    <p
-                        className="text-lg ml-3 font-semibold">
-                        {head}
-                    </p>
-                    <p
-                        className="ml-3">
-                        {lineUnderHead}
-                    </p>
+                    <i>
+                        <p
+                            className="text-lg ml-3 font-semibold">
+                            {head}
+                        </p>
+                        <p
+                            className="ml-3">
+                            {lineUnderHead}
+                        </p>
+                    </i>
                 </Link>
             </div>
         </>

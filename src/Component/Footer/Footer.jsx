@@ -5,67 +5,73 @@ function Footer() {
         <div
             className="flex flex-col h-80 items-center bg-slate-200">
             <div
-                className="flex justify-between w-4/5 mt-16">
+                className="flex justify-between w-4/5 mt-16 italic">
                 <div>
-                    <h1 className="mb-2">ABOUT ZOMIGGY</h1>
-                    <Link to="/about/whoweare" className='block w-fit'>
+                    <h1 className="mb-2 text-lg font-medium underline">ABOUT ZOMIGGY</h1>
+                    <a href='/Zomiggy' className='block w-fit h-7 hover:underline hover:text-lg'>
+                        <p>Home</p>
+                    </a>
+                    <Link to="/about/whoweare" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Who We Are</p>
                     </Link>
-                    <Link to="/about/blog" className='block w-fit'>
+                    <Link to="/about/blog" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Blog</p>
                     </Link>
-                    <Link to="/about/workwithus" className='block w-fit'>
+                    <Link to="/about/workwithus" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p> Work With Us</p>
                     </Link>
-                    <Link to="/about/investorrelations" className='block w-fit'>
+                    <Link to="/about/investorrelations" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p> Investor Relations </p>
                     </Link>
-                    <Link to="/about/reportfraud" className='block w-fit'>
+                    <Link to="/about/reportfraud" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Report Fraud </p>
                     </Link>
-                    <Link to="/about/presskit" className='block w-fit'>
+                    <Link to="/about/presskit" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Press Kit</p>
                     </Link>
-                    <Link to="/about/contactus" className='block w-fit'>
+                    <Link to="/about/contactus" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p> Contact Us </p>
                     </Link>
                 </div>
 
                 <div>
-                    <h1 className="mb-2">LEARN MORE</h1>
-                    <Link to="/learn/privacy" className='block w-fit'>
+                    <h1 className="mb-2 text-lg font-medium underline">LEARN MORE</h1>
+                    <Link to="/learn/privacy" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Privacy</p>
                     </Link>
-                    <Link to="/learn/security" className='block w-fit'>
+                    <Link to="/learn/security" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p> Security </p>
                     </Link>
-                    <Link to="/learn/terms" className='block w-fit'>
+                    <Link to="/learn/terms" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Terms </p>
                     </Link>
                 </div>
 
                 <div>
-                    <h1 className="mb-2">FOR RESTAURANTS</h1>
-                    <Link to="/forrestuarants/partnerwithus" className='block w-fit'>
+                    <h1 className="mb-2 text-lg font-medium underline">FOR RESTAURANTS</h1>
+                    <Link to="/forrestuarants/partnerwithus" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Partner With Us</p>
                     </Link>
-                    <Link to="/forrestuarants/appsforyou" className='block w-fit'>
+                    <Link to="/forrestuarants/appsforyou" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Apps For You</p>
                     </Link>
                 </div>
 
                 <div>
-                    <h1 className="mb-2">SOCIAL LINKS</h1>
+                    <h1 className="mb-2 text-lg font-medium underline">SOCIAL LINKS</h1>
                     <div
                         className='flex flex-wrap w-32'>
-                        <Link to="/social/facebook">
-                            <img src="./Zomiggy/images/facebook.png" alt="facebook link" className='h-8 mr-2' />
+                        <Link to="/social/facebook" className='flex flex-row mb-2 hover:underline hover:text-lg'>
+                            <img src="./Zomiggy/images/facebook.png" alt="facebook link" className='h-8 mr-1' />
+                            Facebook
                         </Link>
-                        <Link to="/instagram">
+                        <Link to="/instagram" className='flex flex-row mb-2 hover:underline hover:text-lg'>
                             <img src="./Zomiggy/images/instagram.png" alt="instagram link" className='h-8 mx-2' />
+                            Instagram
                         </Link>
-                        <Link to="/x"> 
-                            <img src="./Zomiggy/images/x.png" alt="x link" className='h-8 ml-2' />
+                        <Link to="/x" className='flex flex-row hover:underline hover:text-lg'> 
+                            <img src="./Zomiggy/images/x.png" alt="x link" className='h-8 ml-2 mr-1' />
+                            X(Twitter)
                         </Link>
                     </div>
                 </div>
