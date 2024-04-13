@@ -52,10 +52,10 @@ function OrderOrDelivery() {
 
                 {/* Options for menu */}
                 <div className="flex justify-center my-4">
-                    <div className="w-[58rem]">
+                    <div className="w-[58rem] ml-[4rem]">
 
                         {/* Delivery or Dine In */}
-                        <div className="flex my-5 ml-5 h-10">
+                        <div className="flex my-5 ml-10 h-10">
                             <Link className={"mr-6 text-2xl flex items-center w-40 rounded-md hover:text-slate-600 hover:border-b-2" + (ordOrDel === "/Zomiggy/dining" ? " border-b-4 border-black shadow-lg" : "")}
                                 to="/Zomiggy/dining"
                                 onClick={handleClickDining}>
@@ -73,8 +73,8 @@ function OrderOrDelivery() {
                         </div>
 
                         {/* Delivery or resturant card. */}
-                        <p className="text-2xl ml-5 w-max">{ordOrDel === "/Zomiggy/dining" ? "Dine In" : "Delivery"} Restuarants Near you</p>
-                        <div className="flex flex-wrap mt-5">
+                        <p className="text-2xl ml-10 w-max">{ordOrDel === "/Zomiggy/dining" ? "Dine In" : "Delivery"} Restuarants Near you</p>
+                        <div className="flex flex-wrap mt-5 justify-center">
                             {
                                 data.map((element, index) => {
                                     if (ordOrDel === "/Zomiggy/order") {

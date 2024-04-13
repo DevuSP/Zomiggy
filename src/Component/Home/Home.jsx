@@ -35,7 +35,7 @@ function Home() {
                 {/* dining in */}
                 <Card
                     head="Dining"
-                    lineUnderHead="Dine at finest venues"
+                    lineUnderHead="Dine in at the finest venues"
                     route="/Zomiggy/dining"
                     imgSource="./Zomiggy/images/Dining.jpg" />
 

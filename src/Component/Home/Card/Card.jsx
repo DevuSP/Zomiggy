@@ -19,11 +19,11 @@ function Card({ head, lineUnderHead, route, imgSource }) {
                         alt={`Image for ${head}`} />
                     <i>
                         <p
-                            className="text-lg ml-3 font-semibold">
+                            className="text-lg ml-3 font-semibold truncate">
                             {head}
                         </p>
                         <p
-                            className="ml-3">
+                            className="ml-3 truncate">
                             {lineUnderHead}
                         </p>
                     </i>

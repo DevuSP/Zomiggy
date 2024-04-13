@@ -7,7 +7,7 @@ function Footer() {
             <div
                 className="flex justify-between w-4/5 mt-16 italic">
                 <div>
-                    <h1 className="mb-2 text-lg font-medium underline">ABOUT ZOMIGGY</h1>
+                    <h1 className="mb-2 text-lg font-medium underline">ABOUT</h1>
                     <a href='/Zomiggy' className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Home</p>
                     </a>
@@ -35,7 +35,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h1 className="mb-2 text-lg font-medium underline">LEARN MORE</h1>
+                    <h1 className="mb-2 text-lg font-medium underline truncate">LEARN MORE</h1>
                     <Link to="/learn/privacy" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Privacy</p>
                     </Link>
@@ -48,7 +48,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h1 className="mb-2 text-lg font-medium underline">FOR RESTAURANTS</h1>
+                    <h1 className="mb-2 text-lg font-medium underline truncate">FOR RESTAURANTS</h1>
                     <Link to="/forrestuarants/partnerwithus" className='block w-fit h-7 hover:underline hover:text-lg'>
                         <p>Partner With Us</p>
                     </Link>
@@ -58,7 +58,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h1 className="mb-2 text-lg font-medium underline">SOCIAL LINKS</h1>
+                    <h1 className="mb-2 text-lg font-medium underline truncate">SOCIAL LINKS</h1>
                     <div
                         className='flex flex-wrap w-32'>
                         <Link to="/social/facebook" className='flex flex-row mb-2 hover:underline hover:text-lg'>
