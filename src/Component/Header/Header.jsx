@@ -18,11 +18,11 @@ function Header() {
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500">
                             <p>Add Restaurant</p>
                         </Link>
-                        <Link to="/login"
+                        <Link to="/Zomiggy/login"
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500">
                             <p>Login</p>
                         </Link>
-                        <Link to="/singin"
+                        <Link to="/Zomiggy/signup"
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500">
                             <p>Signin</p>
                         </Link>
