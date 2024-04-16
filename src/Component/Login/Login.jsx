@@ -1,18 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [empty, setEmpty] = useState("");  // if any value above is left empty while submit then a red para will appear in bottom them.
+
     const navigate = useNavigate();
     const handleClick = async (e) => {
         e.preventDefault();
+        if (!email) {
+            setEmpty("Email");
+        } else if (!password) {
+            setEmpty("Password");
+        };
         try {
-            const response = await axios.post("http://localhost:3000/login", { email, password });  // server being used to recieve info.
+            const response = await axios.post("http://localhost:3000/Zomiggy/login", { email, password });  // server being used to receive info.
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === "Success") {
-                navigate("/home");  // navigate to login page as soon as above is done.
+                navigate("/Zomiggy");  // navigate to login page as soon as above is done.
             }
         } catch (error) {
             console.log(`Error: ${error}.`);
@@ -37,6 +45,8 @@ function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        {(empty === "Email") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+                        
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="mr-3 text-lg">
@@ -53,6 +63,8 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        {(empty === "Password") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+
                     </div>
                     <button type="submit" className="flex justify-center items-center w-full p-2 bg-blue-600 text-white hover:bg-blue-400">
                         Sign In

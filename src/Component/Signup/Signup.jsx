@@ -1,19 +1,29 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
 
+    const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [empty, setEmpty] = useState("");  // if any value above is left empty while submit then a red para will appear in bottom them.
     const navigate = useNavigate();
     const handleClick = async (e) => {
         e.preventDefault();
+        if (!userName) {
+            setEmpty("Name");
+        } else if (!email) {
+            setEmpty("Email");
+        } else if (!password) {
+            setEmpty("Password");
+        };
         try {
-            const response = await axios.post("http://localhost:3000/login", { email, password });  // server being used to recieve info.
+            const response = await axios.post("http://localhost:3000/Zomiggy/usersignup", { userName, email, password });  // server being used to receive info.
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === "Success") {
-                navigate("/home");  // navigate to login page as soon as above is done.
+                navigate("/Zomiggy/login");  // navigate to login page as soon as above is done.
             }
         } catch (error) {
             console.log(`Error: ${error}.`);
@@ -28,6 +38,21 @@ function Signup() {
                 <form onSubmit={handleClick}>
                     <div className="mb-3 pt-5">
                         <label htmlFor="email" className="mr-3 text-lg">
+                            <strong>Name</strong>
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter Name"
+                            autoComplete="off"
+                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                        {(empty === "Name") ? <p className="text-red-700 text-sm">*{empty} can't be left empty.</p> : null}
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="mr-3 text-lg">
                             <strong>Email</strong>
                         </label>
                         <input
@@ -39,6 +64,8 @@ function Signup() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        {(empty === "Email") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="mr-3 text-lg">
@@ -55,10 +82,13 @@ function Signup() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        {(empty === "Password") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+
                     </div>
                     <button type="submit" className="flex justify-center items-center w-full p-2 bg-blue-600 text-white hover:bg-blue-400">
                         Signup
                     </button>
+                    <p>{ }</p>
                 </form>
                 <p className="pt-6">Already have an account?</p>
                 <Link to="/Zomiggy/login" className="pt-1 text-blue-600 hover:text-blue-400 hover:underline">
