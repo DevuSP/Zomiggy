@@ -8,22 +8,29 @@ function Signup() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [empty, setEmpty] = useState("");  // if any value above is left empty while submit then a red para will appear in bottom them.
+    const [empty, setEmpty] = useState("");  // if any input is left empty after submit then a red para will appear in bottom them.
+    const [exist, setExist] = useState(false); // to hide or show para if email already exist in the database.
     const navigate = useNavigate();
     const handleClick = async (e) => {
         e.preventDefault();
         if (!userName) {
             setEmpty("Name");
+            return;
         } else if (!email) {
             setEmpty("Email");
+            return;
         } else if (!password) {
             setEmpty("Password");
+            return;
         };
         try {
             const response = await axios.post("http://localhost:3000/Zomiggy/usersignup", { userName, email, password });  // server being used to receive info.
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === "Success") {
                 navigate("/Zomiggy/login");  // navigate to login page as soon as above is done.
+            } else if (response.data === "Exist") {
+                setExist(true);
+                console.log("Signup Email exist");
             }
         } catch (error) {
             console.log(`Error: ${error}.`);
@@ -47,7 +54,10 @@ function Signup() {
                             autoComplete="off"
                             className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
                             value={userName}
-                            onChange={(e) => setUserName(e.target.value)}
+                            onChange={(e) => {
+                                setUserName(e.target.value)
+                                setEmpty("");
+                            }}
                         />
                         {(empty === "Name") ? <p className="text-red-700 text-sm">*{empty} can't be left empty.</p> : null}
                     </div>
@@ -62,9 +72,15 @@ function Signup() {
                             autoComplete="off"
                             className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => {
+                                setEmpty("");
+                                setEmail(e.target.value)
+                                setExist(false);
+                            }
+                            }
                         />
                         {(empty === "Email") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+                        {(exist === true) ? <p className="text-red-600 text-sm">*Email already in use.</p> : null}
 
                     </div>
                     <div className="mb-3">
@@ -80,7 +96,10 @@ function Signup() {
                             className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
                             autoComplete="off"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                                setEmpty("");
+                            }}
                         />
                         {(empty === "Password") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
 

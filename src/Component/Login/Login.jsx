@@ -7,6 +7,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [empty, setEmpty] = useState("");  // if any value above is left empty while submit then a red para will appear in bottom them.
+    const [fail, setFail] = useState("");
 
     const navigate = useNavigate();
     const handleClick = async (e) => {
@@ -21,6 +22,10 @@ function Login() {
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === "Success") {
                 navigate("/Zomiggy");  // navigate to login page as soon as above is done.
+            } else {
+                console.log("login " + response.data);
+                setFail(response.data);
+                console.log("value for fail " + fail);
             }
         } catch (error) {
             console.log(`Error: ${error}.`);
@@ -43,10 +48,15 @@ function Login() {
                             autoComplete="off"
                             className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                                setFail("")
+
+                            }}
                         />
                         {(empty === "Email") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
-                        
+                        {(fail === "Email") ? <p className="text-red-600 text-sm">*{fail} is written wrong.</p> : null}
+
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="mr-3 text-lg">
@@ -61,9 +71,13 @@ function Login() {
                             className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
                             autoComplete="off"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                                setFail("")
+                            }}
                         />
                         {(empty === "Password") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
+                        {(fail  === "Password") ? <p className="text-red-600 text-sm">*{fail} is written wrong.</p> : null}
 
                     </div>
                     <button type="submit" className="flex justify-center items-center w-full p-2 bg-blue-600 text-white hover:bg-blue-400">

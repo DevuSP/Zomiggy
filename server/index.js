@@ -13,28 +13,37 @@ app.use(bodyParser.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/FoodDB');
 
-function Alert(username) {
-    alert(`Congratulation ${username}, now please login.`)
-}
-
-// check for email already exist or not.
+// check for email already exist or not. 
 app.post("/Zomiggy/usersignup", async (req, res) => {
     const userName = req.body.userName;
     const email = req.body.email;
     const password = req.body.password;
-    const user = new User({
-        name: userName,
-        email: email,
-        password: password,
-        data: []
-    })
     try {
-        await user.save();
-        console.log(`${userName} Added`);
-        res.send("Success");
+        const response = await User.findOne({ email: email });
+        console.log("DB response " + response);
+        if (response === null) {
+            const user = new User({
+                name: userName,
+                email: email,
+                password: password,
+                data: []
+            })
+            try {
+                await user.save();
+                console.log(`${userName} Added`);
+                res.send("Success");
+            } catch (error) {
+                console.log(error);
+                res.send(error);
+            }
+        } else {
+            console.log("server exist");
+            res.send("Exist"); // id exist in data;
+        }
     } catch (error) {
-        console.log(error);
+        res.send(error);
     }
+
 });
 
 app.post("/Zomiggy/login", async (req, res) => {
@@ -42,11 +51,17 @@ app.post("/Zomiggy/login", async (req, res) => {
     const password = req.body.password;
 
     try {
-       const response = await User.find({email: email});
-       console.log(response[0].password);
-       if(response[0].password === password){
-        res.send("Success");
-       }
+        const response = await User.findOne({ email: email });
+        console.log("response " + response);
+        if (response === null) {
+            console.log("null verified");
+            res.send("Email");
+        } else if (response.password !== password) {
+            res.send("Password");
+        } else if (response.password === password) {
+            console.log("password" + response.password);
+            res.send("Success");
+        }
     } catch (error) {
         res.send(error);
     }
