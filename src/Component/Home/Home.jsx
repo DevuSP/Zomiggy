@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom";
 import Card from "./Card/Card";
 import SearchBar from "./SearchBar/SearchBar";
+import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
 function Home() {
+    const { loggedIn } = useOrdOrDel();
+
+    if (loggedIn) {
+        history.pushState(null, null, location.href);
+        history.back();
+        history.forward();
+        window.onpopstate = function () { history.go(1); } // 1 refreshes the page, 0 goes 1 page forward, -1 goes 1 page backward.
+    }
     return (
         <div className="bg-violet-50/20">
             <div
