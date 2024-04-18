@@ -20,7 +20,7 @@ function Login() {
         try {
             const response = await axios.post("http://localhost:3000/Zomiggy/login", { email, password });  // server being used to receive info.
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
-            if (response.data === "Success") {
+            if (response.data === true) {
                 navigate("/Zomiggy");  // navigate to login page as soon as above is done.
             } else {
                 console.log("login " + response.data);

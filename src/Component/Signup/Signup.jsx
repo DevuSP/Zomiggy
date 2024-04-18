@@ -13,7 +13,7 @@ function Signup() {
     const navigate = useNavigate();
     const handleClick = async (e) => {
         e.preventDefault();
-        if (!userName) {
+        if (!userName) {  // if inputs are empty alert user.
             setEmpty("Name");
             return;
         } else if (!email) {
