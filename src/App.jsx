@@ -5,11 +5,15 @@ import { useState } from "react";
 
 function App() {
     const [ordOrDel, setOrdOrDel] = useState("/Zomiggy/dining"); // default value for ordOrDel.
-    const changeValue = (element) => {
-        setOrdOrDel(element);
+    const changeValue = (e) => {
+        setOrdOrDel(e);
     }
+    const [loggedIn, setLoggedIn] = useState(false);
+    const changeLoggedIn = (e) => {
+        setLoggedIn(e);
+    };
     return (
-        <OrdOrDelProvider value={{ ordOrDel, changeValue }}>
+        <OrdOrDelProvider value={{ ordOrDel, changeValue, loggedIn, changeLoggedIn }}>
             <RouterProvider router={router} />
         </OrdOrDelProvider>
     )

@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
+import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
 function Header() {
+    const { loggedIn, changeLoggedIn } = useOrdOrDel();
+
+    const logOut = () => {
+        if (confirm("You are being logged out.")) {
+            changeLoggedIn(false);
+            alert("You have been successfully logged out.");
+            console.log("logged out");
+        };
+    };
+
     return (
         <>
             {/* navbar */}
@@ -18,14 +29,31 @@ function Header() {
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500">
                             <p>Add Restaurant</p>
                         </Link>
-                        <Link to="/Zomiggy/login"
-                            className="hover:underline p-2 rounded-lg hover:bg-slate-500">
-                            <p>Login</p>
-                        </Link>
-                        <Link to="/Zomiggy/signup"
-                            className="hover:underline p-2 rounded-lg hover:bg-slate-500">
-                            <p>Signin</p>
-                        </Link>
+
+                        {
+                            (!loggedIn) ?
+                                <Link to="/Zomiggy/login"
+                                    className="hover:underline p-2 rounded-lg hover:bg-slate-500">
+                                    <p>Login</p>
+                                </Link>
+                                : null
+                        }
+                        {
+                            (!loggedIn) ?
+                                <Link to="/Zomiggy/signup"
+                                    className="hover:underline p-2 rounded-lg hover:bg-slate-500">
+                                    <p>Signin</p>
+                                </Link>
+                                :
+                                null
+                        }
+                        {
+                            (loggedIn) ? <Link className="hover:underline p-2 rounded-lg hover:bg-slate-500"
+                                onClick={logOut}
+                            >Logout</Link>
+                                : null
+                        }
+
                     </div>
                 </div>
             </div>

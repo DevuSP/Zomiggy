@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 import axios from "axios";
 
 function Signup() {
-
+    const {loggedIn, changeLoggedIn} = useOrdOrDel();
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -27,6 +28,7 @@ function Signup() {
             const response = await axios.post("http://localhost:3000/Zomiggy/usersignup", { userName, email, password });  // server being used to receive info.
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === "Success") {
+                changeLoggedIn(true);
                 navigate("/Zomiggy/login");  // navigate to login page as soon as above is done.
             } else if (response.data === "Exist") {
                 setExist(true);
