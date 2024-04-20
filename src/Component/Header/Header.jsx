@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 
 function Header() {
-    const { loggedIn, changeLoggedIn } = useOrdOrDel();
+    const { loggedIn, changeLoggedIn, userId, changeUserId } = useOrdOrDel();
 
     const logOut = () => {
         if (confirm("You are being logged out.")) {
             changeLoggedIn(false);
+            changeUserId("Guest");
             alert("You have been successfully logged out.");
             console.log("logged out");
         };
@@ -24,6 +25,10 @@ function Header() {
                         <Link to="/cart"
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500 ">
                             <p>Cart</p>
+                        </Link>
+                        <Link to="/orders"
+                            className="hover:underline p-2 rounded-lg hover:bg-slate-500 ">
+                            <p>Orders</p>
                         </Link>
                         <Link to="/addrestaurant"
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500">

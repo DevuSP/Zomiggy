@@ -9,8 +9,8 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [empty, setEmpty] = useState("");  // if any value above is left empty while submit then a red para will appear in bottom them.
-    const [fail, setFail] = useState("");
-    const {loggedIn, changeLoggedIn} = useOrdOrDel(); //if logged in.
+    const [fail, setFail] = useState(""); //if failed
+    const { changeLoggedIn, changeUserId } = useOrdOrDel(); //if logged in.
 
     const navigate = useNavigate();
     const handleClick = async (e) => {
@@ -25,14 +25,15 @@ function Login() {
             console.log(`Response: ${response.data}`);  // either use response.data to not get [object objet] or console.log(response) nothing else.
             if (response.data === true) { //successful.
                 changeLoggedIn(true);
-                navigate("/Zomiggy");  // navigate to login page as soon as above is done.
+                changeUserId(email);
+                navigate("/Zomiggy/order");  // navigate to login page as soon as above is done.
             } else {
                 console.log("login " + response.data);
                 setFail(response.data);
                 console.log("reason for error " + fail);
             }
         } catch (error) {
-            console.log(`Error: ${error}.`);
+            console.log("Error " + error);
         }
     }
 

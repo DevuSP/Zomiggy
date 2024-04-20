@@ -12,8 +12,12 @@ function App() {
     const changeLoggedIn = (e) => {
         setLoggedIn(e);
     };
+    const [userId, setUserId] = useState("Guest");
+    const changeUserId = (e) => {
+        setUserId(e);
+    }
     return (
-        <OrdOrDelProvider value={{ ordOrDel, changeValue, loggedIn, changeLoggedIn }}>
+        <OrdOrDelProvider value={{ ordOrDel, changeValue, loggedIn, changeLoggedIn, userId, changeUserId }}>
             <RouterProvider router={router} />
         </OrdOrDelProvider>
     )

@@ -21,8 +21,6 @@ app.post("/Zomiggy/usersignup", async (req, res) => {
     const email = req.body.email;
     let password;
 
-
-
     try {
         const response = await User.findOne({ email: email });
         console.log("DB response " + response);
@@ -68,13 +66,25 @@ app.post("/Zomiggy/login", async (req, res) => {
             res.send("Email");  // means no user with this email found.
         }
         bcrypt.compare(password, response.password, (err, result) => {
-            if(err) throw err;
+            if (err) throw err;
             console.log("login res password " + response.password);
             console.log("result " + result);
             res.send(result); // sends true for right password and false for wrong.
         });
     } catch (error) {
         res.send(error);
+    }
+});
+// db.coll.updateOne({"_id": 1}, {$push :{"array": 1}})
+
+app.post("/Zomiggy/deliverytocart", async (req, res) => {
+    const { image, dish, rating, price, deliveryTime, userId } = req.body;
+    const cartObject = { image, dish, rating, price, deliveryTime }
+    try {
+        const response = await User.findOneAndUpdate({ email: userId }, {$push: {cart: cartObject}});
+        res.send(true);
+    } catch (error) {
+        console.log(error);
     }
 });
 
