@@ -22,7 +22,7 @@ function Header() {
                     className="w-2/3">
                     <div
                         className="flex flex-row justify-end flex-nowrap space-x-6 text-xl">
-                        <Link to="/cart"
+                        <Link to="/Zomiggy/cart"
                             className="hover:underline p-2 rounded-lg hover:bg-slate-500 ">
                             <p>Cart</p>
                         </Link>

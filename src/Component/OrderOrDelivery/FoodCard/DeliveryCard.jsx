@@ -25,7 +25,7 @@ function DeliveryCard({ prop }) {
                 try {
                     const response = await axios.post("http://localhost:3000/Zomiggy/deliverytocart", { image, dish, rating, price, deliveryTime, userId });
                     if (response.data) {
-                        console.log("Added to Cart");
+                        alert("Added to Cart.");
                     } else {
                         console.log(response.data);
                     }

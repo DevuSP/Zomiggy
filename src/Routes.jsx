@@ -1,6 +1,6 @@
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import { Home, OrderOrDelivery, Login, Signup } from './index.jsx'
+import { Home, OrderOrDelivery, Login, Signup, Cart } from './index.jsx'
 
 
 const router = createBrowserRouter(
@@ -13,6 +13,7 @@ const router = createBrowserRouter(
             </Route>
             <Route path='/Zomiggy/login' element={<Login />}></Route>
             <Route path='/Zomiggy/signup' element={<Signup />}></Route>
+            <Route path='/Zomiggy/cart' element={<Cart />}></Route>
         </>
     )
 )

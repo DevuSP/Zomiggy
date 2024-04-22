@@ -81,8 +81,18 @@ app.post("/Zomiggy/deliverytocart", async (req, res) => {
     const { image, dish, rating, price, deliveryTime, userId } = req.body;
     const cartObject = { image, dish, rating, price, deliveryTime }
     try {
-        const response = await User.findOneAndUpdate({ email: userId }, {$push: {cart: cartObject}});
+        const response = await User.findOneAndUpdate({ email: userId }, { $push: { cart: cartObject } });
         res.send(true);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+app.post("/Zomiggy/cart", async (req, res) => {
+    const userId = req.body.userId;
+    try {
+        const response = await User.findOne({ email: userId });
+        res.send(response.cart);
     } catch (error) {
         console.log(error);
     }
