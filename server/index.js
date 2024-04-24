@@ -79,7 +79,8 @@ app.post("/Zomiggy/login", async (req, res) => {
 
 app.post("/Zomiggy/deliverytocart", async (req, res) => {
     const { image, dish, rating, price, deliveryTime, userId } = req.body;
-    const cartObject = { image, dish, rating, price, deliveryTime }
+    const itemId = Date.now();
+    const cartObject = { itemId, image, dish, rating, price, deliveryTime }
     try {
         const response = await User.findOneAndUpdate({ email: userId }, { $push: { cart: cartObject } });
         res.send(true);

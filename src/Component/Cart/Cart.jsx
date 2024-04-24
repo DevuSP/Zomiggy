@@ -2,6 +2,7 @@ import axios from "axios";
 import { useOrdOrDel } from "../../Context/OrdOrDelContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CardForCart from "./Card/CardForCart";
 
 function Cart() {
     const { userId, loggedIn } = useOrdOrDel("");
@@ -15,8 +16,7 @@ function Cart() {
         try {
             const foodInCart = async () => {
                 const response = await axios.post("http://localhost:3000/Zomiggy/cart", { userId });
-                console.log(response.data); //don't write string with response, it will show [object object];
-                setFoodCart(response.data);
+                setFoodCart(response.data); //don't write string with response, it will show [object object];
                 if (response.data.length > 0) {
                     setIsFoodInCart(true);
                 } else {
@@ -27,14 +27,26 @@ function Cart() {
         } catch (error) {
             console.log(error);
         }
+        foodCart.forEach((e) => {
+            console.log(e)
+        })
     }, []);
 
     return (
-        <>
-            {(!isFoodInCart) ? <p>"Hungry, add something to cart and order it."</p> : foodCart.forEach((element) => {
-                
-            })};
-        </>
+        <div className="flex flex-1">
+            {(!isFoodInCart) ?
+                <div className="flex flex-col items-center justify-center w-full">
+                    <p className="text-3xl text-slate-500 text-center">Your Cart is empty.</p>
+                    <p className="text-3xl text-slate-500 text-center">"Add your favorite food to cart to order it whenever you want."</p>
+                </div>
+                :
+                <div className="flex w-[90%]">
+                    {foodCart.map((e, i) => {
+                        return <CardForCart key={i} prop={e} />
+                    })}
+                </div>
+            }
+        </div>
     )
 }
 export default Cart;

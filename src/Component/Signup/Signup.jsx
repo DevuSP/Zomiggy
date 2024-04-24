@@ -41,9 +41,9 @@ function Signup() {
 
 
     return (
-        <div className="flex flex-col justify-center items-center w-full h-screen bg-blue-50">
-            <div className="bg-white p-7 rounded-lg w-25 hover:shadow-sm hover:shadow-blue-900">
-                <h2 className="text-3xl text-blue-400"><strong>Signup</strong></h2>
+        <div className="flex flex-col justify-center items-center w-full h-screen bg-slate-50">
+            <div className="bg-white p-7 rounded-lg w-25 hover:shadow-sm hover:shadow-slate-900">
+                <h2 className="text-3xl text-slate-400"><strong>Signup</strong></h2>
                 <form onSubmit={handleClick}>
                     <div className="mb-3 pt-5">
                         <label htmlFor="email" className="mr-3 text-lg">
@@ -54,7 +54,7 @@ function Signup() {
                             id="name"
                             placeholder="Enter Name"
                             autoComplete="off"
-                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
+                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-slate-300"
                             value={userName}
                             onChange={(e) => {
                                 setUserName(e.target.value)
@@ -72,7 +72,7 @@ function Signup() {
                             id="email"
                             placeholder="Enter Email"
                             autoComplete="off"
-                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
+                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-slate-300"
                             value={email}
                             onChange={(e) => {
                                 setEmpty("");
@@ -95,7 +95,7 @@ function Signup() {
                             type="password"
                             placeholder="Enter Password"
                             id="password"
-                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-blue-300"
+                            className="p-2 rounded text-lg hover:shadow-sm hover:shadow-slate-300"
                             autoComplete="off"
                             value={password}
                             onChange={(e) => {
@@ -106,13 +106,13 @@ function Signup() {
                         {(empty === "Password") ? <p className="text-red-600 text-sm">*{empty} can't be left empty.</p> : null}
 
                     </div>
-                    <button type="submit" className="flex justify-center items-center w-full p-2 bg-blue-600 text-white hover:bg-blue-400">
+                    <button type="submit" className="flex justify-center items-center w-full p-2 bg-slate-600 text-white hover:bg-slate-400">
                         Signup
                     </button>
                     <p>{ }</p>
                 </form>
                 <p className="pt-6">Already have an account?</p>
-                <Link to="/Zomiggy/login" className="pt-1 text-blue-600 hover:text-blue-400 hover:underline">
+                <Link to="/Zomiggy/login" className="pt-1 text-slate-600 hover:text-slate-400 hover:underline">
                     Login
                 </Link>
             </div>

@@ -1,38 +1,22 @@
 import axios from "axios"
-import { useOrdOrDel } from "../../../Context/OrdOrDelContext";
 import { useNavigate } from "react-router-dom";
+import { User } from "../../../../server/models/Users";
 
 
-function DeliveryCard({ prop }) {
+function CardForCart({ prop }) {
+    const itemId = prop.itemId;
     const image = prop.image;
     const dish = prop.dish;
     const rating = prop.rating;
     const price = prop.price;
     const deliveryTime = prop.deliveryTime;
-    const { userId, loggedIn } = useOrdOrDel();
     const navigate = useNavigate();
 
-    const handleClick = async () => {
-        if (!loggedIn) {  //if guest send to login or return
-            if (confirm("Please login to your account.")) {
-                navigate("/Zomiggy/login");
-            } else {
-                alert("Sorry cannot add to cart until you have an account.");
-            }
-            console.log("logged in " + loggedIn);
-        } else {
-            if (confirm("Add to cart")) {
-                try {
-                    const response = await axios.post("http://localhost:3000/Zomiggy/deliverytocart", { image, dish, rating, price, deliveryTime, userId });
-                    if (response.data) {
-                        alert("Added to Cart.");
-                    } else {
-                        console.log(response.data);
-                    }
-                } catch (error) {
+    const handleRemove = async () => {
+        try{
+            const response = await User.findOneAndDelete({itemId}, )
+        }catch{
 
-                }
-            }
         }
     }
     return (
@@ -58,14 +42,20 @@ function DeliveryCard({ prop }) {
                 </i>
             </div>
             <div className="flex justify-center items-center">
-                <button type="submit" className="w-[95%] p-2 m-1 bg-slate-600 text-white hover:bg-slate-400 rounded-md"
-                    onClick={handleClick}
+                <button className=" w-[90%] p-2 bg-slate-600 text-white hover:bg-slate-400 rounded-md"
                 >
-                    Add to cart
+                    Order
+                </button>
+            </div>
+            <div className="my-4 flex justify-center items-center">
+                <button className="w-[90%] p-2 bg-slate-600 text-white hover:bg-slate-400 rounded-md"
+                    onClick={handleRemove}
+                >
+                    Remove
                 </button>
             </div>
         </div>
     )
 }
 
-export default DeliveryCard;
+export default CardForCart;

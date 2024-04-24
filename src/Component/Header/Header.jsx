@@ -17,28 +17,28 @@ function Header() {
         <>
             {/* navbar */}
             <div
-                className="flex justify-end bg-zinc-800 text-slate-300 px-1 py-1">
+                className="flex justify-end bg-slate-700 text-slate-100 px-1 py-1">
                 <div
                     className="w-2/3">
                     <div
                         className="flex flex-row justify-end flex-nowrap space-x-6 text-xl">
+                        <Link to="/Zomiggy"
+                            className="hover:underline p-2 rounded-md hover:bg-slate-600">
+                            <p>Home</p>
+                        </Link>
                         <Link to="/Zomiggy/cart"
-                            className="hover:underline p-2 rounded-lg hover:bg-slate-500 ">
+                            className="hover:underline p-2 rounded-md hover:bg-slate-600 ">
                             <p>Cart</p>
                         </Link>
                         <Link to="/orders"
-                            className="hover:underline p-2 rounded-lg hover:bg-slate-500 ">
+                            className="hover:underline p-2 rounded-md hover:bg-slate-600 ">
                             <p>Orders</p>
-                        </Link>
-                        <Link to="/addrestaurant"
-                            className="hover:underline p-2 rounded-lg hover:bg-slate-500">
-                            <p>Add Restaurant</p>
                         </Link>
 
                         {
                             (!loggedIn) ?
                                 <Link to="/Zomiggy/login"
-                                    className="hover:underline p-2 rounded-lg hover:bg-slate-500">
+                                    className="hover:underline p-2 rounded-md hover:bg-slate-600">
                                     <p>Login</p>
                                 </Link>
                                 : null
@@ -46,14 +46,14 @@ function Header() {
                         {
                             (!loggedIn) ?
                                 <Link to="/Zomiggy/signup"
-                                    className="hover:underline p-2 rounded-lg hover:bg-slate-500">
+                                    className="hover:underline p-2 rounded-md hover:bg-slate-600">
                                     <p>Signin</p>
                                 </Link>
                                 :
                                 null
                         }
                         {
-                            (loggedIn) ? <Link className="hover:underline p-2 rounded-lg hover:bg-slate-500"
+                            (loggedIn) ? <Link className="hover:underline p-2 rounded-md hover:bg-slate-600"
                                 onClick={logOut}
                             >Logout</Link>
                                 : null

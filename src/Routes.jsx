@@ -10,10 +10,10 @@ const router = createBrowserRouter(
                 <Route path='' element={<Home />} />
                 <Route path='/Zomiggy/order' element={<OrderOrDelivery />} />
                 <Route path='/Zomiggy/dining' element={<OrderOrDelivery />} />
+                <Route path='/Zomiggy/cart' element={<Cart />} />
             </Route>
             <Route path='/Zomiggy/login' element={<Login />}></Route>
             <Route path='/Zomiggy/signup' element={<Signup />}></Route>
-            <Route path='/Zomiggy/cart' element={<Cart />}></Route>
         </>
     )
 )
