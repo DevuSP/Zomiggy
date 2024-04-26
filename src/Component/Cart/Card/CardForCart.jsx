@@ -1,22 +1,23 @@
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
-import { User } from "../../../../server/models/Users";
+import { useOrdOrDel } from "../../../Context/OrdOrDelContext";
 
 
 function CardForCart({ prop }) {
+    const { userId } = useOrdOrDel();
     const itemId = prop.itemId;
     const image = prop.image;
     const dish = prop.dish;
     const rating = prop.rating;
     const price = prop.price;
     const deliveryTime = prop.deliveryTime;
-    const navigate = useNavigate();
 
     const handleRemove = async () => {
-        try{
-            const response = await User.findOneAndDelete({itemId}, )
-        }catch{
-
+        try {
+            const response = await axios.post("http://localhost:3000/Zomiggy/remove-item", { itemId, userId });
+            console.log(response);
+        } catch (error) {
+            console.error(error)
         }
     }
     return (

@@ -27,20 +27,19 @@ function Cart() {
         } catch (error) {
             console.log(error);
         }
-        foodCart.forEach((e) => {
-            console.log(e)
-        })
-    }, []);
+       
+    }, [foodCart]);
 
     return (
-        <div className="flex flex-1">
+        <div className="flex flex-1 flex-col">
+        <h1 className="text-3xl font-semibold mx-6 mt-8" >Your Cart</h1>
             {(!isFoodInCart) ?
                 <div className="flex flex-col items-center justify-center w-full">
                     <p className="text-3xl text-slate-500 text-center">Your Cart is empty.</p>
                     <p className="text-3xl text-slate-500 text-center">"Add your favorite food to cart to order it whenever you want."</p>
                 </div>
                 :
-                <div className="flex w-[90%]">
+                <div className="flex w-[90%] flex-wrap">
                     {foodCart.map((e, i) => {
                         return <CardForCart key={i} prop={e} />
                     })}

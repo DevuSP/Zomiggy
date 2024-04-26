@@ -90,14 +90,33 @@ app.post("/Zomiggy/deliverytocart", async (req, res) => {
 });
 
 app.post("/Zomiggy/cart", async (req, res) => {
-    const userId = req.body.userId;
+    const email = req.body.userId;
     try {
-        const response = await User.findOne({ email: userId });
+        const response = await User.findOne({ email: email });
         res.send(response.cart);
     } catch (error) {
         console.log(error);
     }
 });
+
+app.post("/Zomiggy/remove-item", async (req, res) => {
+    const { itemId, userId } = req.body;
+    const removeItem = (data) => {
+        const newCart = [];
+        data.forEach((e) => {
+            (e.itemId !== itemId) ? newCart.push(e) : null;
+        });
+        return newCart;
+    }
+    console.log(userId);
+    try {
+        const response = await User.findOne({ email: userId });
+        const update = await User.updateOne({ email: userId }, { cart: removeItem(response.cart) });
+        res.send(update.acknowledged);
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server is running at ${port}.`)

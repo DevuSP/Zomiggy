@@ -10,7 +10,7 @@ function Card({ head, lineUnderHead, route, imgSource }) {
     return (
         <>
             <div className="border-2 border-black-300 w-1/5 rounded-xl m-3 hover:border-slate-700 cursor-pointer p-1 pb-2" 
-                // increase width below screen 1000 and so on.
+                // increase width below screen 1000 and so on. 3/5(mobile < 700), 2/5(700) tablet.
             >
                 <Link to={route} onClick={handleClick}>
                     <img
