@@ -31,8 +31,8 @@ function Home() {
 
             {/* Order online || dining in */}
             <div
-                className="my-9 flex justify-center w-full flex-wrap">
-
+                className="my-9 flex justify-center flex-row flex-wrap">
+            
                 {/* order online */}
                 <Card
                     head="Order Online"
